@@ -1,0 +1,51 @@
+// Copyright (c) 2016 Rodrigo Speller
+
+#notifications {
+    > li > a {
+        padding: 15px;
+    }
+
+    &.navbar-nav {
+        .open .dropdown-menu {
+            background-color: @dropdown-bg;
+            border: 1px solid @dropdown-border;
+
+            padding: 0;
+
+            > li > a {
+                padding: 5px 20px;
+
+                color: @dropdown-link-color;
+
+                &:not(.text-nowrap) {
+                    white-space: normal;
+                }
+
+                &:hover,
+                &:focus {
+                    color: @dropdown-link-hover-color;
+                    background-color: @dropdown-link-hover-bg;
+                }
+            }
+            > .active > a {
+                &,
+                &:hover,
+                &:focus {
+                    color: @dropdown-link-active-color;
+                    background-color: @dropdown-link-active-bg;
+                }
+            }
+            > .disabled > a {
+                &,
+                &:hover,
+                &:focus {
+                    color: @dropdown-link-disabled-color;
+                    background-color: @dropdown-link-hover-bg;
+                }
+            }
+            > .divider {
+                margin: 0;
+            }
+        }
+    }
+}

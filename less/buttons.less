@@ -1,0 +1,117 @@
+// Copyright (c) 2016 Rodrigo Speller
+
+//
+// MIXINS
+//
+
+// Botões delineados
+.button-outline(@color, @hover-color, @border) {
+    &.btn-outline {
+        color: @color;
+
+        &:hover {
+	        &.disabled,
+	        &[disabled] {
+		        background-color: transparent;
+		        transition: all .5s;
+	        }
+        }
+
+        &:hover,
+        &:focus {
+            &:not(.disabled):not([disabled]) {
+                color: @hover-color;
+            }
+        }
+    }
+}
+
+// Botões circulares
+.button-circular(@diameter) {
+    width: @diameter;
+    height: @diameter;
+}
+
+//
+// ESTILOS
+//
+
+// Botões coloridos delineados
+
+* {
+    .for(@i: 1) when (@i <= length(@colors)) {
+        @name: extract(@colors, @i);
+        @var: "color-@{name}";
+        @color: @@var;
+
+        &.btn-@{name} {
+            .button-outline(contrast(@color, darken(@color, 15%), @color, @color-contrast-threshold); contrast(@color, @color-contrast-dark, @color-contrast-light, @color-contrast-threshold); darken(@color, 5%));
+        }
+
+        .for(@i + 1);
+    }
+    .for;
+}
+
+// Botões delineados
+
+.btn-outline {
+    color: inherit;
+    background-color: transparent;
+    transition: all .5s;
+
+    outline: none !important;
+}
+
+// Botões delineados: Bootstrap
+
+.btn-primary {
+    .button-outline(@btn-primary-bg; @btn-primary-color; @btn-primary-border);
+}
+
+.btn-success {
+    .button-outline(@btn-success-bg; @btn-success-color; @btn-success-border);
+}
+
+.btn-info {
+    .button-outline(@btn-info-bg; @btn-info-color; @btn-info-border);
+}
+
+.btn-warning {
+    .button-outline(@btn-warning-bg; @btn-warning-color; @btn-warning-border);
+}
+
+.btn-danger {
+    .button-outline(@btn-danger-bg; @btn-danger-color; @btn-danger-border);
+}
+
+// Botões circulares
+
+.btn-circle {
+    text-align: center;
+    :only-child {
+        display: block;
+        vertical-align: middle;
+    }
+
+    box-sizing: content-box;
+
+    // tamanho normal
+    @padding: min(@padding-base-vertical, @padding-base-horizontal);
+    .button-size(@padding; @padding; @font-size-base; @line-height-base; 500px);
+    .button-circular(@font-size-base * @line-height-base);
+
+    &.btn-lg { // grande
+        @padding: min(@padding-large-vertical, @padding-large-horizontal);
+        .button-size(@padding; @padding; @font-size-large; @line-height-large; 500px);
+        .button-circular(@font-size-large * @line-height-large);
+    }
+
+    &.btn-xl { // extra-grande
+        @padding: min(@padding-large-vertical, @padding-large-horizontal) * 1.25;
+        @font-size: @font-size-large * 1.25;
+        @line-height: @line-height-large * 1.25;
+        .button-size(@padding; @padding; @font-size; @line-height; 500px);
+        .button-circular(@font-size * @line-height);
+    }
+}

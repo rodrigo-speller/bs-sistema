@@ -1,0 +1,18 @@
+{
+  "name": "bs-sistema",
+  "version": "0.0.1",
+  "main": [
+    "./js/bs-sistema.js",
+    "./less/bs-sistema.less"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "bootstrap-social": "~4.8.0",
+    "bootstrap-palette": "https://github.com/rodrigo-speller/bootstrap-palette.git",
+    "font-awesome": "~4.2.0",
+    "jquery": "1.9.1 - 2"
+  },
+  "devDependencies": {
+  },
+  "homepage": "https://github.com/rodrigo-speller/bs-sistema"
+}

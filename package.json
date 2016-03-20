@@ -1,0 +1,40 @@
+{
+  "name": "bs-sistema",
+  "version": "0.0.1",
+  "description": "Um framework para sistemas web.",
+  "main": "./lib/http-server",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rodrigo-speller/bs-sistema.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "web",
+    "template",
+    "ui",
+    "system",
+    "sistema",
+    "português",
+    "brasil"
+  ],
+  "scripts": {
+    "start": "node ./bin/http-server"
+  },
+  "contributors": [
+    {
+      "name": "Rodrigo Speller",
+      "email": "rspeller@primosti.com.br"
+    }
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "bower": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/rodrigo-speller/bs-sistema"
+  },
+  "license": "PrimosTI",
+  "preferGlobal": "true"
+}

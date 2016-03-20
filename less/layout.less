@@ -1,0 +1,100 @@
+// Copyright (c) 2016 Rodrigo Speller
+
+@import "layout.notifications.less";
+@import "layout.page-wrapper.less";
+@import "layout.sidebar.less";
+@import "layout.topbar.less";
+
+#wrapper {
+    padding: 0;
+
+    @media(min-width:@grid-float-breakpoint) {
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+#logo {
+    box-sizing: border-box;
+    display: table-cell;
+    padding: 0;
+    height: @navbar-height;
+    vertical-align: middle;
+
+    @media(min-width:@grid-float-breakpoint) {
+        width: @sidebar-width;
+        text-align: center;
+    }
+
+    @media(max-width: @grid-float-breakpoint-max) {
+        padding-left: 15px;
+    }
+}
+
+#logo .navbar-brand {
+    padding: 0;
+    float: none;
+    vertical-align: middle;
+}
+
+#notifications {
+    margin: 0;
+    padding: 0;
+
+    @media(max-width:@grid-float-breakpoint-max) {
+        &.in {
+            overflow-y: visible;
+        }
+
+        &.navbar-nav .open .dropdown-menu {
+            position: absolute;
+        }
+
+        > li {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
+    @media(min-width:@grid-float-breakpoint) {
+        > .dropdown > .dropdown-menu {
+            margin-left: auto;
+        }
+    }
+}
+
+#search {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#sidebar {
+    @media(min-width:@grid-float-breakpoint) {
+        box-sizing: border-box;
+        position: absolute;
+        width: @sidebar-width;
+        bottom: 0;
+        top: @navbar-height + 1px;
+        overflow-y: auto;
+    }
+}
+
+#page-wrapper {
+    padding: 0 15px;
+
+    @media(min-width:@grid-float-breakpoint) {
+        & {
+            position: absolute;
+            box-sizing: border-box;
+            top: @navbar-height + 1px;
+            right: 0;
+            bottom: 0;
+            left: @sidebar-width;
+            overflow-y: auto;
+        }
+    }
+}

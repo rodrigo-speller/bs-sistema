@@ -1,0 +1,27 @@
+// Copyright (c) 2016 Rodrigo Speller
+
+@spacing-unit-size:     5px;
+@round-unit-size:       5px;
+@sidebar-width:         260px;
+
+// bootstrap
+
+@components-path:       "/components/";
+@icon-font-path:        "@{components-path}bootstrap/fonts/";
+@fa-font-path:          "@{components-path}font-awesome/fonts/";
+
+// Navbar
+@page-bg:                                   transparent;
+
+@navbar-top-shadow:                         0 0 5px;
+@navbar-top-shadow-hover:                   0 0 30px;
+
+@topbar-shadow:                             0 0 5px;
+@topbar-shadow-hover:                       0 0 30px;
+
+@sidebar-shadow:                            0 0 5px;
+@sidebar-shadow-hover:                      0 0 30px;
+@sidebar-nav-levels:                        5;
+
+@zindex-topbar:                             @zindex-navbar;
+@zindex-sidebar:                            min(@zindex-navbar, @zindex-dropdown) - 1;

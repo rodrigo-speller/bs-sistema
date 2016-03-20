@@ -1,0 +1,26 @@
+// Copyright (c) 2016 Rodrigo Speller
+
+*{
+    .for(@i: 1) when (@i <= length(@colors)) {
+        @name: extract(@colors, @i);
+        @color-name: "color-@{name}";
+	    @color: @@color-name;
+	    @color-light: lighten(@color, 15%);
+	    @color-dark: darken(@color, 15%);
+
+        &.text-@{name} {color: @color !important}
+        &.text-@{name}-light {color: @color-light !important}
+        &.text-@{name}-dark {color: @color-dark !important}
+
+        &.bg-@{name} {background-color: @color !important}
+        &.bg-@{name}-light {background-color: @color-light !important}
+        &.bg-@{name}-dark {background-color: @color-dark !important}
+
+        &.b-@{name} {border-color: @color !important}
+        &.b-@{name}-light {border-color: @color-light !important}
+        &.b-@{name}-dark {border-color: @color-dark !important}
+
+        .for(@i + 1);
+    }
+    .for;
+}

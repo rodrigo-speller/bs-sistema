@@ -1,0 +1,114 @@
+// Copyright (c) 2016 Rodrigo Speller
+
+// display
+
+.block { display: block; }
+.hide { display: none !important }
+.inline { display: inline-block !important; }
+.none { display: none; }
+
+// spacing
+
+*{
+    .spacing(@suffix, @size) {
+        // margin
+        &.m-@{suffix} {margin: @size}
+        &.m-t-@{suffix} {margin-top: @size}
+        &.m-r-@{suffix} {margin-right: @size}
+        &.m-b-@{suffix} {margin-bottom: @size}
+        &.m-l-@{suffix} {margin-left: @size}
+        // padding
+        &.p-@{suffix} {padding: @size}
+        &.p-t-@{suffix} {padding-top: @size}
+        &.p-r-@{suffix} {padding-right: @size}
+        &.p-b-@{suffix} {padding-bottom: @size}
+        &.p-l-@{suffix} {padding-left: @size}
+    }
+
+    .spacing(n, 0);
+    .spacing(xs, @spacing-unit-size);
+    .spacing(sm, @spacing-unit-size * 2);
+    .spacing(md, @spacing-unit-size * 3);
+    .spacing(lg, @spacing-unit-size * 5);
+}
+
+
+// cursor
+
+.cursor-default { cursor: default }
+.action,
+.cursor-pointer { cursor: pointer }
+.cursor-not-allowed { cursor: not-allowed }
+.cursor-wait {cursor: wait }
+
+// line-height
+.l-h-xs { line-height: 1; }
+.l-h-sm { line-height: 1.2; }
+.l-h-md { line-height: 1.5; }
+.l-h-lg { line-height: 2em; }
+
+// font
+.font-thin { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-bold { font-weight: 700; }
+
+.font-xs { font-size: .75em; }
+.font-sm { font-size: .1em; }
+.font-md { font-size: 1.25em; }
+.font-lg { font-size: 1.5em; }
+
+// border
+
+*{
+    .border(@suffix, @size) {
+        &.b-@{suffix} { border-width: @size }
+        &.b-t-@{suffix} { border-top-width: @size }
+        &.b-r-@{suffix} { border-right-width: @size }
+        &.b-b-@{suffix} { border-bottom-width: @size }
+        &.b-l-@{suffix} { border-left-width: @size }
+    }
+
+    .border(n, 0);
+    .border(xs, 1px);
+    .border(sm, 2px);
+    .border(md, 5px);
+    .border(lg, 10px);
+}
+
+b-dashed { border-style: dashed }
+b-dotted { border-style: dotted }
+b-double { border-style: double }
+b-groove { border-style: groove }
+b-ridge { border-style: ridge }
+b-solid { border-style: solid }
+
+// horizontal line styles
+
+hr {
+    &.dashed { border-style: dashed }
+    &.dotted { border-style: dotted }
+    &.double { border-style: double }
+    &.groove { border-style: groove }
+    &.ridge { border-style: ridge }
+    &.solid { border-style: solid }
+}
+
+// round
+
+.rounded { border-radius: 9999px; }
+
+*{
+    .round(@suffix, @size) {
+        &.r-@{suffix} { border-radius: @size }
+        &.r-tl-@{suffix} { border-top-left-radius: @size }
+        &.r-tr-@{suffix} { border-top-right-radius: @size }
+        &.r-bl-@{suffix} { border-bottom-left-radius: @size }
+        &.r-br-@{suffix} { border-bottom-right-radius: @size }
+    }
+
+    .round(n, 0);
+    .round(xs, @round-unit-size);
+    .round(sm, @round-unit-size * 2);
+    .round(md, @round-unit-size * 3);
+    .round(lg, @round-unit-size * 5);
+}

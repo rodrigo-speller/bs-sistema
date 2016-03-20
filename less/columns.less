@@ -1,0 +1,54 @@
+// Copyright (c) 2016 Rodrigo Speller
+
+*{
+    .for(@i: 1) when (@i <= (@grid-columns)) {
+        &.columns-@{i},
+        &.columns-xs-@{i} {
+            column-count: @i;
+            -webkit-column-count: @i;
+            -moz-column-count: @i;
+        }
+
+        @media (min-width: @screen-sm-min) {
+            &.columns-sm-@{i} {
+                column-count: @i;
+                -webkit-column-count: @i;
+                -moz-column-count: @i;
+            }
+        }
+
+        @media (min-width: @screen-md-min) {
+            &.columns-md-@{i} {
+                column-count: @i;
+                -webkit-column-count: @i;
+                -moz-column-count: @i;
+            }
+        }
+
+        @media (min-width: @screen-lg-min) {
+            &.columns-lg-@{i} {
+                column-count: @i;
+                -webkit-column-count: @i;
+                -moz-column-count: @i;
+            }
+        }
+
+        .for(@i + 1);
+    }
+    .for;
+}
+
+* {
+    .for(@i: 1, @list: ~":not(*)") when (@i =< @grid-columns) {
+        @item: ~".columns-@{i}, .columns-xs-@{i}, .columns-sm-@{i}, .columns-md-@{i}, .columns-lg-@{i}";
+        .for((@i + 1), ~"@{list}, @{item}");
+    }
+    .for(@i, @list) when (@i > @grid-columns) {
+        &@{list} {
+            column-gap: (@grid-gutter-width / 2);
+            -webkit-column-gap: (@grid-gutter-width / 2);
+            -moz-column-gap: (@grid-gutter-width / 2);
+        }
+    }
+    .for;
+}
